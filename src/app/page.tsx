@@ -3,7 +3,7 @@ import React,{useEffect,useState} from "react";
 import { useRouter } from "next/navigation";
 import { getAuth,onAuthStateChanged } from "firebase/auth";
 import app from '@/firebase/firebase';
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
 import './globals.css'
 
 const Home = () : JSX.Element => {

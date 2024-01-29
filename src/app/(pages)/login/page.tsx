@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Row, Col, Form, Input, Button, Divider, Flex, message } from 'antd';
 import { FormikProps, useFormik } from 'formik';
 import * as yup from 'yup';
@@ -8,7 +8,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { RiAccountBoxFill } from "react-icons/ri";
 import { FaGoogle } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
-import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword,onAuthStateChanged } from 'firebase/auth';
 import app from '@/firebase/firebase';
 
 
@@ -54,6 +54,19 @@ const Login: React.FC = () => {
       });
     });
   };
+  useEffect(() => {
+    onAuthStateChanged(getAuth(app),(user) => {
+      if(user){
+        if(user?.uid === localStorage.getItem('firebaseUID')){
+          router.push('/');
+        }else{
+          return;
+        }
+      }else{
+        router.push('/');
+      }
+    })
+  },[])
   const formik: FormikProps<FieldProps> = useFormik({
     initialValues: {
       email: '',
