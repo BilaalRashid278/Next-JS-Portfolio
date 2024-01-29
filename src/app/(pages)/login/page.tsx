@@ -60,7 +60,7 @@ const Login: React.FC = () => {
         if(user?.uid === localStorage.getItem('firebaseUID')){
           messageApi.open({
             type: 'success',
-            content: 'You age already logged in',
+            content: 'You are already logged in',
           });
           setTimeout(() => {
             router.push('/');
@@ -68,8 +68,6 @@ const Login: React.FC = () => {
         }else{
           return;
         }
-      }else{
-        router.push('/');
       }
     })
   },[])

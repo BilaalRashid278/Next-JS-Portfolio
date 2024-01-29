@@ -4,11 +4,14 @@ import { useRouter } from "next/navigation";
 import { getAuth,onAuthStateChanged } from "firebase/auth";
 import app from '@/firebase/firebase';
 import { Modal } from 'antd';
-import './globals.css'
+import './globals.css';
+import {useDispatch} from 'react-redux';
+import { setLogin } from "./lib/features/authSlice/authSlice";
 
 const Home = () : JSX.Element => {
-  const [open,setOpen] = useState(false);
+  const [open,setOpen] = useState<boolean>(false);
   const router = useRouter();
+  const dispatch = useDispatch();
   const handleOpen = () => {
     setOpen(true)
   }
@@ -19,14 +22,16 @@ const Home = () : JSX.Element => {
     onAuthStateChanged(getAuth(app),user => {
       if(user){
         if(user?.uid === localStorage.getItem('firebaseUID')){
-          return;
+          dispatch<any>(setLogin(true))
         }else{
+          dispatch<any>(setLogin(false))
           handleOpen();
         }
       }else{
+        dispatch<any>(setLogin(false))
         handleOpen();
       }
-    })
+    });
   },[])
   return (
       <main>
