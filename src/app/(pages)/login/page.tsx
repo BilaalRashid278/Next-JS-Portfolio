@@ -58,7 +58,13 @@ const Login: React.FC = () => {
     onAuthStateChanged(getAuth(app),(user) => {
       if(user){
         if(user?.uid === localStorage.getItem('firebaseUID')){
-          router.push('/');
+          messageApi.open({
+            type: 'success',
+            content: 'You age already logged in',
+          });
+          setTimeout(() => {
+            router.push('/');
+          },1500)
         }else{
           return;
         }
