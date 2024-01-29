@@ -104,8 +104,8 @@ const Login: React.FC = () => {
     <Row className='h-[calc(100vh-55px)]'>
       {contextHolder}
       <Col span={24} className='flex justify-center mt-36'>
-        <Flex className='w-[100%] max-w-[400px]' vertical>
-          <Form onFinish={() => formik.handleSubmit()} {...FormGrid} className='w-[100%] mx-4 md:mx-0' autoComplete='on' autoCorrect='on'>
+        <Flex className='w-[100%] max-w-[400px] px-5 md:px-0' vertical>
+          <Form style={{marginLeft : 0}} onFinish={() => formik.handleSubmit()} {...FormGrid} className='w-[100%] mx-4 md:mx-0' autoComplete='on' autoCorrect='on'>
             <Form.Item name='email' rules={[{ required: true, message: formik?.errors?.email }]}>
               <Input onChange={formik.handleChange} type='email' size='large' prefix={<HiOutlineMail />} placeholder='Email' />
             </Form.Item>

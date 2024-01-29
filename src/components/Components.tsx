@@ -7,23 +7,33 @@ import Link from 'next/link';
 
 
 interface ButtonProps {
-    type? : ButtonType,
-    size? : ButtonSize,
-    title : string,
-    isLink : boolean,
-    url ? : string,
-    onClick? : () => void
+    type?: ButtonType,
+    size?: ButtonSize,
+    title: string,
+    isLink: boolean,
+    url?: string,
+    onClick?: () => void
 }
 
 
-export const CustomButton : React.FC<ButtonProps> = ({type = 'text',size = 'middle',title,onClick,isLink = false,url = '/'} : ButtonProps) : React.ReactNode => {
-    return <Button 
-    type={type}
-    size={size}
-    onClick={onClick}
-    >
-      {
-        isLink ? <Link href={url}>{title}</Link> : (<React.Fragment>{title}</React.Fragment>)
-      }
-    </Button>
+export const CustomButton: React.FC<ButtonProps> = ({ type = 'text', size = 'middle', title, onClick, isLink = false, url = '/' }: ButtonProps): React.ReactNode => {
+    return isLink ? (
+        <Link href={url}>
+            <Button
+                type={type}
+                size={size}
+                onClick={onClick}
+            >
+                {title}
+            </Button>
+        </Link>
+    ) : (
+        <Button
+            type={type}
+            size={size}
+            onClick={onClick}
+        >
+            {title}
+        </Button>
+    )
 };
