@@ -15,10 +15,10 @@ import { NavItems } from '@/utils/constant';
 import Link from 'next/link';
 
 
+const NavIconsArray = [<FaHome key={0}/>,<GiInnerSelf key={1}/>,<GoProjectSymlink key={2}/>,<TiContacts key={3}/>];
 export default function NavMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const NavIconsArray = [<FaHome/>,<GiInnerSelf/>,<GoProjectSymlink/>,<TiContacts/>];
     const handleClick = (event: any) => {
         setAnchorEl(event.currentTarget);
     };
