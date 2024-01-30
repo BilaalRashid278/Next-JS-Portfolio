@@ -105,7 +105,7 @@ const Register: React.FC = () => {
     return (
         <Row className='h-[calc(100vh-55px)]'>
             {contextHolder}
-            <Col span={24} className='flex justify-center mt-36'>
+            <Col span={24} className='flex justify-center items-center'>
                 <Flex justify='center' align='center' className='w-[100%] md:w-[60%] lg:w-[50%] shadow-xl rounded-xl h-[370px] mx-5'>
                     <Flex className='w-[100%] max-w-[400px] px-5 md:px-0 ' vertical>
                         <Form style={{ marginLeft: 0 }} onFinish={() => formik.handleSubmit()} {...FormGrid} className='w-[100%] mx-4 md:mx-0' autoComplete='on' autoCorrect='on'>
@@ -127,7 +127,7 @@ const Register: React.FC = () => {
                             </Form.Item>
                             <Divider orientation='center'>OR</Divider>
                         </Form>
-                        <Button style={{backgroundColor : '#FD5D5D'}} onClick={handleGoogleAuth} variant='contained' color='warning' startIcon={<FaGoogle />} size='large'>
+                        <Button style={{backgroundColor : '#FD5D5D'}} onClick={handleGoogleAuth} variant='contained' color='warning' startIcon={<FaGoogle />} size='medium'>
                             Signup Up with Google
                         </Button>
                     </Flex>
