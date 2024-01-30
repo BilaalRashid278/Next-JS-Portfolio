@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
                 <h1 className='font-bold text-2xl'>Logo</h1>
             </Link>
             {isLogin == false && <Flex align='center' gap={20}>
-                <CustomButton type='text' size='middle' title='SignIn' isLink={true} url='/login'/>
+                <CustomButton type='text' size='middle' title='SignIn' isLink={true} url='/register'/>
             </Flex>}
         </>
     )

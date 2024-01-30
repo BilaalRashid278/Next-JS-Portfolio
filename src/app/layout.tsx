@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import "./globals.css";
 import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
