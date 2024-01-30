@@ -1,11 +1,9 @@
-import React from 'react'
-
+// import { Spin } from 'antd';
 const Loading = () => {
   return (
-    <div className='h-[100vh-55px] flex justify-center mt-20'>
-       <h1 className='font-extrabold text-3xl'>
-        loading...
-       </h1>
+    <div className='h-[100px] d-flex justify-center items-center mt-8 w-[100%] text-center'>
+      <h3 className="font-bold text-2xl">Loading...</h3>
+      {/* <Spin/> */}
     </div>
   )
 }

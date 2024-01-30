@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <Provider store={store}>
           <header>
-            <nav className="h-[55px] flex justify-between items-center px-10">
+            <nav className="h-[55px] flex justify-between items-center px-1 md:px-5">
               <Navbar />
             </nav>
             <Suspense fallback={<Loading />}>

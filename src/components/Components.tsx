@@ -25,6 +25,7 @@ interface MuiButtonProps {
     isLink: boolean,
     url?: string,
     color?: OverridableStringUnion<'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning'>
+    style? : React.CSSProperties,
     onClick?: () => void
 }
 
@@ -50,10 +51,11 @@ export const AntCustomButton: React.FC<ButtonProps> = ({ type = 'text', size = '
         </Button>
     )
 };
-export const MuiCustomButton: React.FC<MuiButtonProps> = ({ variant = 'text', size = 'medium', title, onClick, isLink = false, url = '/',type = 'button',color }: MuiButtonProps): React.ReactNode => {
+export const MuiCustomButton: React.FC<MuiButtonProps> = ({ variant = 'text', size = 'medium', title, onClick, isLink = false, url = '/',type = 'button',color,style }: MuiButtonProps): React.ReactNode => {
     return isLink ? (
         <Link href={url}>
             <MuiButton
+                style={style}
                 color={color}
                 variant={variant}
                 type={type}
@@ -65,6 +67,7 @@ export const MuiCustomButton: React.FC<MuiButtonProps> = ({ variant = 'text', si
         </Link>
     ) : (
         <MuiButton
+            style={style}
             type={type}
             size={size}
             onClick={onClick}

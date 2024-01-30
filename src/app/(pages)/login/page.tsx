@@ -102,7 +102,7 @@ const Login: React.FC = () => {
   })
 
   return (
-    <Row className='h-[calc(100vh-55px)]'>
+    <Row className='h-[calc(100vh-55px)] flex justify-center items-center'>
       {contextHolder}
       <Col span={24} className='flex justify-center items-center'>
         <Flex justify='center' align='center' className='w-[100%] md:w-[60%] lg:w-[50%] shadow-xl rounded-xl h-[370px] mx-5'>
