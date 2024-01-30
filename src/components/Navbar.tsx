@@ -1,14 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 import Link from 'next/link';
 import { Flex } from 'antd'
 import { useSelector } from 'react-redux';
-import { MuiCustomButton } from './Components';
+import { AntCustomButton } from './Components';
 import { NavItems } from '@/utils/constant';
 import { Grid, } from '@mui/material';
 import Image from 'next/image';
 import LogoImg from '@/assets/favicon.png';
-import { AntCustomButton } from './Components';
 import NavMenu from './NavForMobile';
+
+
 
 
 
@@ -37,10 +38,10 @@ const Navbar: React.FC = () => {
                         })}
                     </div>
                     <div className='flex items-center'>
-                        {/*isLogin == false &&*/ <Flex align='center' gap={5}>
-                            <MuiCustomButton type='button' size='small' title='Log In' isLink={true} url='/login' color='primary' variant='contained' style={{ backgroundColor: '#0075bd' }} />
+                        {isLogin == false && <Flex align='center' gap={5}>
+                            <AntCustomButton type='default' size='small' title='Log In' isLink={true} url='/login'/>
                             <span className='text-xs'>OR</span>
-                            <MuiCustomButton type='button' size='small' title='Sign Up' isLink={true} url='/register' color='primary' variant='contained' style={{ backgroundColor: '#0075bd' }} />
+                            <AntCustomButton type='default' size='small' title='Sign Up' isLink={true} url='/register'/>
                         </Flex>}
                     </div>
                 </Grid>
