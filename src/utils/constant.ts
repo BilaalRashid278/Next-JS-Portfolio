@@ -5,6 +5,8 @@ interface NavItemProps {
 };
 
 
+// cons
+
 export const NavItems : NavItemProps[] = [
     {
         name : 'Home',
