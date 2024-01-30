@@ -10,10 +10,16 @@ import { Provider } from 'react-redux';
 
 
 
+
+
 export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
+      <head>
+        <title>Portfolio</title>
+        <link rel="icon" type="image/png" href="public/favicon.png" />
+      </head>
       <body>
         <Provider store={store}>
           <header>

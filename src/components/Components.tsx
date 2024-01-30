@@ -2,6 +2,9 @@
 import React from 'react'
 import { Button } from 'antd'
 import { ButtonSize, ButtonType } from 'antd/es/button';
+import {Button as MuiButton} from '@mui/material';
+import {OverridableStringUnion,} from '@mui/types';
+
 import Link from 'next/link';
 
 
@@ -14,9 +17,19 @@ interface ButtonProps {
     url?: string,
     onClick?: () => void
 }
+interface MuiButtonProps {
+    type?: OverridableStringUnion<'button' | 'submit'>,
+    variant? : OverridableStringUnion<'text' | 'outlined' | 'contained'>,
+    size?: OverridableStringUnion<'small' | 'medium' | 'large'>,
+    title: string,
+    isLink: boolean,
+    url?: string,
+    color?: OverridableStringUnion<'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning'>
+    onClick?: () => void
+}
 
 
-export const CustomButton: React.FC<ButtonProps> = ({ type = 'text', size = 'middle', title, onClick, isLink = false, url = '/' }: ButtonProps): React.ReactNode => {
+export const AntCustomButton: React.FC<ButtonProps> = ({ type = 'text', size = 'middle', title, onClick, isLink = false, url = '/' }: ButtonProps): React.ReactNode => {
     return isLink ? (
         <Link href={url}>
             <Button
@@ -35,5 +48,28 @@ export const CustomButton: React.FC<ButtonProps> = ({ type = 'text', size = 'mid
         >
             {title}
         </Button>
+    )
+};
+export const MuiCustomButton: React.FC<MuiButtonProps> = ({ variant = 'text', size = 'medium', title, onClick, isLink = false, url = '/',type = 'button',color }: MuiButtonProps): React.ReactNode => {
+    return isLink ? (
+        <Link href={url}>
+            <MuiButton
+                color={color}
+                variant={variant}
+                type={type}
+                size={size}
+                onClick={onClick}
+            >
+                {title}
+            </MuiButton>
+        </Link>
+    ) : (
+        <MuiButton
+            type={type}
+            size={size}
+            onClick={onClick}
+        >
+            {title}
+        </MuiButton>
     )
 };

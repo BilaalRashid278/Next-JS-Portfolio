@@ -95,7 +95,7 @@ const Login: React.FC = () => {
       } catch (error) {
         messageApi.open({
           type: 'error',
-          content: 'Someting went wrong',
+          content : 'Something went wrong',
         });
       }
     }
