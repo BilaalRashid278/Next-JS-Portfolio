@@ -18,9 +18,9 @@ const AdminPanel = () => {
         <main className='w-[100%] flex h-[calc(100vh-55px)]'>
             <MobilePanel width={PanelCommonWidth} transform={transform} handleTransform={handleTransform}/>
             <Panel width={PanelCommonWidth} />
-            <section className='w-[100%] border-2 bg-yellow-500 relative'>
-                <div className='block lg:hidden px-3 py-2'>
-                    <IconButton onClick={() => setTransform(0)} size='small'>
+            <section className='w-[100%] relative'>
+                <div className='block lg:hidden px-5 py-2'>
+                    <IconButton onClick={() => setTransform(0)} size='medium'>
                         <IoMenuOutline/>
                     </IconButton>
                 </div>
