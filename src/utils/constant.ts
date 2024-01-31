@@ -24,4 +24,10 @@ export const NavItems : NavItemProps[] = [
         name : 'Contact',
         url : '/contact'
     },
+    {
+        name : 'Admin Panel',
+        url : '/admin-panel'
+    },
 ]
+
+export const colors_1 : string = '#53b1da';

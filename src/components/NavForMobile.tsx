@@ -15,7 +15,7 @@ import { NavItems } from '@/utils/constant';
 import Link from 'next/link';
 
 
-const NavIconsArray = [<FaHome key={0}/>,<GiInnerSelf key={1}/>,<GoProjectSymlink key={2}/>,<TiContacts key={3}/>];
+const NavIconsArray = [<FaHome key={0} />, <GiInnerSelf key={1} />, <GoProjectSymlink key={2} />, <TiContacts key={3} />];
 export default function NavMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -31,15 +31,13 @@ export default function NavMenu() {
                 <Tooltip title="Links">
                     <IconButton
                         onClick={handleClick}
-                        size="small"
+                        size="medium"
                         sx={{ ml: 2 }}
                         aria-controls={open ? 'account-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                     >
-                        <Avatar sx={{ width: 32, height: 32 }}>
-                            <RiMenu3Line />
-                        </Avatar>
+                        <RiMenu3Line color='black' />
                     </IconButton>
                 </Tooltip>
             </Box>

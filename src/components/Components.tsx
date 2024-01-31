@@ -15,6 +15,7 @@ interface ButtonProps {
     title: string,
     isLink: boolean,
     url?: string,
+    style? : React.CSSProperties,
     onClick?: () => void
 }
 interface MuiButtonProps {
@@ -30,10 +31,11 @@ interface MuiButtonProps {
 }
 
 
-export const AntCustomButton: React.FC<ButtonProps> = ({ type = 'text', size = 'middle', title, onClick, isLink = false, url = '/' }: ButtonProps): React.ReactNode => {
+export const AntCustomButton: React.FC<ButtonProps> = ({ type = 'text', size = 'middle', title, onClick, isLink = false, url = '/',style }: ButtonProps): React.ReactNode => {
     return isLink ? (
         <Link href={url}>
             <Button
+                style={style}
                 type={type}
                 size={size}
                 onClick={onClick}
@@ -43,6 +45,7 @@ export const AntCustomButton: React.FC<ButtonProps> = ({ type = 'text', size = '
         </Link>
     ) : (
         <Button
+            style={style}
             type={type}
             size={size}
             onClick={onClick}

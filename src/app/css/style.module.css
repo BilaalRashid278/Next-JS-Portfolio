@@ -1,0 +1,8 @@
+.front_img{
+    background-image: url(../../assets/bg_img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
+    /* border: 1px solid red; */
+}

@@ -8,7 +8,7 @@ import { Grid, } from '@mui/material';
 import Image from 'next/image';
 import LogoImg from '@/assets/favicon.png';
 import NavMenu from './NavForMobile';
-
+import { colors_1 } from "@/utils/constant";
 
 
 
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
                         {NavItems?.map((NavItem, index) => {
                             return (
                                 <React.Fragment key={index}>
-                                    <AntCustomButton isLink={true} title={NavItem?.name} size={'small'} url={NavItem?.url} type='link' />
+                                    <AntCustomButton style={{color : colors_1}} isLink={true} title={NavItem?.name} size={'small'} url={NavItem?.url} type='link'/>
                                 </React.Fragment>
                             )
                         })}
